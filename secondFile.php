@@ -1,5 +1,6 @@
 <?php
-    $inputUser = $_GET['inputUser']
+    $inputUser = $_GET['inputUser'];
+    $badWords = $_GET['badWords'];
 ?>
 
 <!DOCTYPE html>
@@ -12,8 +13,24 @@
     <title>Document</title>
 </head>
 <body>
+    <p>
+        <?php
+            echo $inputUser;
+            echo strlen($inputUser);
+        ?>
+    </p>
+    <p>
     <?php
-        echo $inputUser
+        // 
+        echo str_replace($badWords,'***',$inputUser);
+
+
+        echo strlen(str_replace($badWords,'***',$inputUser));
+
+
+        var_dump(str_replace($badWords,'***',$inputUser));
     ?>
+    </p>
+    
 </body>
 </html>
